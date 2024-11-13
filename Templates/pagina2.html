@@ -4,17 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemplo Python Flask Bhaskara</title>
+    <style>
+        /* Resetando margens e paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Corpo da página */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #222;
+            color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Container do formulário */
+        .container {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        /* Título */
+        h1 {
+            font-size: 2.2rem;
+            color: #ff1c1c; /* Vermelho vibrante */
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        /* Labels */
+        label {
+            font-size: 1.1rem;
+            margin: 10px 0;
+            display: block;
+            color: #ddd;
+        }
+
+        /* Estilo dos campos de entrada */
+        input[type="text"] {
+            width: 80%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #333;
+            outline: none;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        /* Efeito ao focar no campo de entrada */
+        input[type="text"]:focus {
+            border-color: #ff1c1c; /* Vermelho para foco */
+        }
+
+        /* Estilo do botão */
+        button {
+            padding: 12px 25px;
+            background-color: #ff1c1c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        /* Efeito ao passar o mouse sobre o botão */
+        button:hover {
+            background-color: #e60000; /* Vermelho mais escuro */
+        }
+
+        button:active {
+            background-color: #cc0000; /* Vermelho ainda mais escuro */
+        }
+
+        /* Estilo da caixa de resultado */
+        .resultado {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #333;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #444;
+        }
+
+        .resultado h3 {
+            font-size: 1.5rem;
+            color: #ff1c1c;
+            margin-bottom: 10px;
+        }
+
+        .resultado p {
+            font-size: 1rem;
+            color: #ddd;
+        }
+    </style>
 </head>
 <body>
-    
-    <form method="POST" action="{{url_for('bhaskara')}}">
 
-        Informe o valor de a: <input type="text" name="a"/>
-        Informe o valor de b: <input type="text" name="b"/>
-        Informe o valor de c: <input type="text" name="c"/>
+    <div class="container">
+        <h1>Cálculo das Raízes de Bhaskara</h1>
+        <form method="POST" action="{{ url_for('bhaskara') }}">
+            <label for="a">Informe o valor de a:</label>
+            <input type="text" id="a" name="a" required />
 
-        <button type="submit"> Calcular as raizes </button>
-    </form>
+            <label for="b">Informe o valor de b:</label>
+            <input type="text" id="b" name="b" required />
+
+            <label for="c">Informe o valor de c:</label>
+            <input type="text" id="c" name="c" required />
+
+            <button type="submit">Calcular as raízes</button>
+        </form>
+
+        <!-- Exemplo de resultado -->
+        <div class="resultado">
+            <h3>Resultado</h3>
+            <p>X1: <strong>{{x1}}</strong></p>
+            <p>X2: <strong>{{x2}}</strong></p>
+        </div>
+    </div>
 
 </body>
 </html>

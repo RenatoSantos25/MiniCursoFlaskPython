@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from math import sqrt
 app = Flask(__name__)
 
@@ -8,10 +8,10 @@ def index():
 
 @app.route("/pagina1/<nome>")
 def pagina1(nome):
-    return render_template("pagina.html", nomePessoa=nome)
+    return render_template("pagina1.html", nomePessoa=nome)
 
 @app.route("/pagina2")
-def.pagina2():
+def pagina2():
     return render_template("pagina2.html")
 
 @app.post("/bhaskara")
@@ -25,6 +25,10 @@ def bhaskara():
     if delta >= 0:
         x1= (-b + sqrt(delta)) / 2 * a
         x2= (-b - sqrt(delta)) / 2 * a
-        return f"X1 = {x1} e X2 = {x2}"
+        return render_template("pagina2.html", x1= x1, x2 = x2)
+
+    else:
+        return "Não há soluções para a equação"
         
+
 app.run(port=80, debug=True)
