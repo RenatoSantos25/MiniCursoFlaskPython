@@ -14,13 +14,13 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #1a1a1a; /* Fundo escuro */
+    color: #fff; /* Texto em branco */
     line-height: 1.6;
 }
 
 header {
-    background-color: #6C63FF;
+    background-color: #d32f2f; /* Vermelho */
     color: #fff;
     padding: 20px;
     display: flex;
@@ -52,7 +52,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ffe600;
+    color: #ff5722; /* Laranja avermelhado */
 }
 
 main {
@@ -61,7 +61,7 @@ main {
 }
 
 .hero {
-    background: linear-gradient(135deg, #6C63FF, #FFE600);
+    background: linear-gradient(135deg, #d32f2f, #ff5722); /* Gradiente vermelho para laranja */
     color: #fff;
     padding: 60px 20px;
     border-radius: 10px;
@@ -81,8 +81,8 @@ main {
 }
 
 .cta-btn {
-    background-color: #ffe600;
-    color: #333;
+    background-color: #ff5722; /* Laranja avermelhado */
+    color: #fff;
     padding: 12px 30px;
     border: none;
     font-size: 1.1rem;
@@ -92,7 +92,7 @@ main {
 }
 
 .cta-btn:hover {
-    background-color: #ffcc00;
+    background-color: #f44336; /* Vermelho mais intenso */
 }
 
 .features {
@@ -103,7 +103,7 @@ main {
 }
 
 .feature {
-    background-color: #fff;
+    background-color: #333; /* Fundo escuro para as features */
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -117,11 +117,11 @@ main {
 .feature h3 {
     font-size: 1.8rem;
     margin-bottom: 15px;
-    color: #6C63FF;
+    color: #d32f2f; /* Vermelho para título das features */
 }
 
 footer {
-    background-color: #333;
+    background-color: #111; /* Preto */
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -162,7 +162,7 @@ footer p {
 
     <main>
         <section class="hero">
-            <h2>Bem-vindo ao nosso mundo de design</h2>
+            <h2>Bem-vindo {{nomePessoa}}</h2>
             <p>Explore nossas ideias e criações com um toque de beleza.</p>
             <button class="cta-btn">Saiba Mais</button>
         </section>
