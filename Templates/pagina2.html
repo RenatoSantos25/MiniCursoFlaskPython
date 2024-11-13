@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Python Flask Bhaskara</title>
+</head>
+<body>
+    
+    <form method="POST" action="{{url_for('bhaskara')}}">
+
+        Informe o valor de a: <input type="text" name="a"/>
+        Informe o valor de b: <input type="text" name="b"/>
+        Informe o valor de c: <input type="text" name="c"/>
+
+        <button type="submit"> Calcular as raizes </button>
+    </form>
+
+</body>
+</html>
